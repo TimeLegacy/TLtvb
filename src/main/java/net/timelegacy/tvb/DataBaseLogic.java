@@ -24,7 +24,7 @@ public class DataBaseLogic implements CommandExecutor, Listener {
   public static boolean connect(String uri, String database) {
     mongoClient = MongoClients.create(uri);
     mongoDatabase = mongoClient.getDatabase(database);
-    queue = mongoDatabase.getCollection("voting");
+    queue = mongoDatabase.getCollection("queue");
     return true;
   }
 
@@ -56,7 +56,7 @@ public class DataBaseLogic implements CommandExecutor, Listener {
 
         String product = "";
         for (int i = 1; i < args.length; i++) {
-          product = product + args[i];
+          product = product + " " + args[i];
         }
         Document doc =
             new Document("uuid", (args[0]))
