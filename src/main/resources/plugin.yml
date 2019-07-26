@@ -1,0 +1,7 @@
+name: TLTVB
+version: 1.0
+main: net.timelegacy.tvb.TLTVB
+author: piajesse
+commands:
+  db:
+    description: interacts with the database
